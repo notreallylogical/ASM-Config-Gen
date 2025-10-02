@@ -67,7 +67,7 @@
   <h2>Character</h2>
 
   <div class="dropdown-container">
-    <div class="dropdown">
+    <div class="dropdown character-dropdown">
       <div class="dropdown-button">Select Character</div>
       <div class="dropdown-menu">
         <input type="text" class="dropdown-search" placeholder="Search...">
@@ -77,7 +77,7 @@
   </div>
 
   <div class="dropdown-container">
-    <div class="dropdown">
+    <div class="dropdown character-dropdown">
       <div class="dropdown-button">Select Character</div>
       <div class="dropdown-menu">
         <input type="text" class="dropdown-search" placeholder="Search...">
@@ -87,7 +87,7 @@
   </div>
 
   <div class="dropdown-container">
-    <div class="dropdown">
+    <div class="dropdown character-dropdown">
       <div class="dropdown-button">Select Character</div>
       <div class="dropdown-menu">
         <input type="text" class="dropdown-search" placeholder="Search...">
@@ -97,11 +97,52 @@
   </div>
 
   <div class="dropdown-container">
-    <div class="dropdown">
+    <div class="dropdown character-dropdown">
       <div class="dropdown-button">Select Character</div>
       <div class="dropdown-menu">
         <input type="text" class="dropdown-search" placeholder="Search...">
         <div class="dropdown-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+      <h2>Lightcone</h2>
+      <div class="dropdown-container">
+        <div class="dropdown lightcone-dropdown">
+          <div class="dropdown-button">Select Lightcone</div>
+          <div class="dropdown-menu">
+            <input type="text" class="dropdown-search" placeholder="Search...">
+            <div class="dropdown-options"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <div class="dropdown lightcone-dropdown">
+          <div class="dropdown-button">Select Lightcone</div>
+          <div class="dropdown-menu">
+            <input type="text" class="dropdown-search" placeholder="Search...">
+            <div class="dropdown-options"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <div class="dropdown lightcone-dropdown">
+          <div class="dropdown-button">Select Lightcone</div>
+          <div class="dropdown-menu">
+            <input type="text" class="dropdown-search" placeholder="Search...">
+            <div class="dropdown-options"></div>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-container">
+        <div class="dropdown lightcone-dropdown">
+          <div class="dropdown-button">Select Lightcone</div>
+          <div class="dropdown-menu">
+            <input type="text" class="dropdown-search" placeholder="Search...">
+            <div class="dropdown-options"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -118,20 +159,19 @@
       "Robin", "Ruan Mei", "Saber", "Sampo", "Seele", "Serval", "Silver Wolf", "Sparkle", 
       "Sunday", "Sushang", "The Herta", "Tingyun", "Topaz", "Tribbie", "Welt", "Xueyi", 
       "Yanqing", "Yukong", "Yunli"
-    ].sort();
+    ]
 
-    const dropdowns = document.querySelectorAll('.dropdown');
+    const lightcones = ["A Grounded Ascent", "A Thankless Coronation", "Along the Passing Shore", "An Instant Before A Gaze", "Baptism of Pure Thought", "Before Dawn", "Brighter Than the Sun", "But the Battle Isn't Over", "Cruising in the Stellar Sea", "Dance at Sunset", "Earthly Escapade", "Echoes of the Coffin", "Epoch Etched in Golden Blood", "Eternal Calculus", "Flame of Blood, Blaze My Path", "Flowing Nightglow", "Forever", "If Time Were a Flower", "I Shall Be My Own Sword", "I Venture Forth to Hunt", "Incessant Rain", "Inherently Unjust Destiny", "In the Name of the World", "In the Night", "Into the Unreachable Veil", "Lies Dance on the Breeze", "Life Should Be Cast to Flames", "Long May Rainbows Adorn the Sky", "Long Road Leads Home", "Make Farewells More Beautiful", "Memory's Curtain Never Falls", "Moment of Victory", "Night of Fright", "Night on the Milky Way", "Ninjutsu Inscription: Dazzling Evilbreaker", "On the Fall of an Aeon", "Past Self in Mirror", "Patience Is All You Need", "Reforged Remembrance", "Sailing Towards a Second Life", "Scent Alone Stays True", "She Already Shut Her Eyes", "Sleep Like the Dead", "Solitary Healing", "Something Irreplaceable", "Texture of Memories", "The Hell Where Ideals Burn", "The Unreachable Side", "This Love", "Those Many Springs", "Though Worlds Apart", "Thus Burns the Dawn", "Time Waits for No One", "Time Woven Into Gold", "To Evernight's Stars", "Whereabouts Should Dreams Rest", "Why Does the Ocean Sing", "Worrisome, Blissful", "Yet Hope Is Priceless", 
+    "A Dream Scented in Wheat", "A Secret Vow", "A Trail of Bygone Blood", "After the Charmony Fall", "Before the Tutorial Mission Starts", "Boundless Choreo", "Carve the Moon, Weave the Clouds", "Concert for Two", "Dance! Dance! Dance!", "Day One of My New Life", "Destiny's Threads Forewoven", "Dream's Montage", "Dreamville Adventure", "Eyes of the Prey", "Fermata", "Final Victor", "Flames Afar", "Fly Into a Pink Tomorrow", "For Tomorrow's Journey", "Geniuses' Greetings", "Geniuses' Repose", "Good Night and Sleep Well", "Hey, Over Here", "Holiday Thermae Escapade", "Indelible Promise", "In Pursuit of the Wind", "It's Showtime", "Journey, Forever Peaceful", "Landau's Choice", "Make the World Clamor", "Memories of the Past", "Nowhere to Run", "Ninja Record: Sound Hunt", "Only Silence Remains", "Past and Future", "Perfect Timing", "Planetary Rendezvous", "Poised to Bloom", "Post-Op Conversation", "Quid Pro Quo", "Resolution Shines As Pearls of Sweat", "Return to Darkness", "River Flows in Spring", "Shadowed by Night", "Shared Feeling", "Subscribe for More!", "Sweat Now, Cry Less", "Swordplay", "The Birth of the Self", "The Day The Cosmos Fell", "The Flower Remembers", "The Forever Victual", "The Great Cosmic Enterprise", "The Moles Welcome You", "The Seriousness of Breakfast", "The Story's Next Page", "This Is Me!", "Today Is Another Peaceful Day", "Trend of the Universal Market", "Unto Tomorrow's Morrow", "Under the Blue Sky", "Victory In a Blink", "Warmth Shortens Cold Nights", "We Are Wildfire", "We Will Meet Again", "What Is Real?", "Woof! Walk Time!", "See You at the End",
+    "Adversarial", "Amber", "Arrows", "Chorus", "Collapsing Sky", "Cornucopia", "Darting Arrow", "Data Bank", "Defense", "Fine Fruit", "Hidden Shadow", "Loop", "Mediation", "Meshing Cogs", "Multiplication", "Mutual Demise", "Passkey", "Pioneering", "Reminiscence", "Sagacity", "Shadowburn", "Shattered Home", "Void"
+    ]
 
-    function getAllSelectedValues() {
-      return Array.from(dropdowns)
-        .map(d => d.querySelector('.dropdown-button').textContent)
-        .filter(text => text !== 'Select Character');
-    }
-
-    function renderOptions(dropdown) {
+    function renderCharacterOptions(dropdown) {
       const searchInput = dropdown.querySelector('.dropdown-search');
       const optionsContainer = dropdown.querySelector('.dropdown-options');
-      const selectedValues = getAllSelectedValues().filter(val => val !== dropdown.querySelector('.dropdown-button').textContent);
+      const selectedValues = Array.from(document.querySelectorAll('.character-dropdown .dropdown-button'))
+        .map(b => b.textContent)
+        .filter(text => text !== 'Select Character' && text !== dropdown.querySelector('.dropdown-button').textContent);
       const filter = searchInput.value.toLowerCase();
 
       optionsContainer.innerHTML = '';
@@ -142,34 +182,59 @@
         div.addEventListener('click', () => {
           dropdown.querySelector('.dropdown-button').textContent = char;
           dropdown.querySelector('.dropdown-menu').style.display = 'none';
-          updateAllDropdowns();
+          document.querySelectorAll('.character-dropdown').forEach(dd => renderCharacterOptions(dd));
         });
         optionsContainer.appendChild(div);
       });
     }
 
-    function updateAllDropdowns() {
-      dropdowns.forEach(dropdown => renderOptions(dropdown));
+    function renderLightconeOptions(dropdown) {
+      const searchInput = dropdown.querySelector('.dropdown-search');
+      const optionsContainer = dropdown.querySelector('.dropdown-options');
+      const filter = searchInput.value.toLowerCase();
+
+      optionsContainer.innerHTML = '';
+      const filtered = lightcones.filter(lc => lc.toLowerCase().includes(filter));
+      filtered.forEach(lc => {
+        const div = document.createElement('div');
+        div.textContent = lc;
+        div.addEventListener('click', () => {
+          dropdown.querySelector('.dropdown-button').textContent = lc;
+          dropdown.querySelector('.dropdown-menu').style.display = 'none';
+        });
+        optionsContainer.appendChild(div);
+      });
     }
 
-    dropdowns.forEach(dropdown => {
+    function setupDropdown(dropdown, isCharacter) {
       const button = dropdown.querySelector('.dropdown-button');
       const menu = dropdown.querySelector('.dropdown-menu');
       const search = dropdown.querySelector('.dropdown-search');
 
-      // Toggle menu
       button.addEventListener('click', () => {
         const isVisible = menu.style.display === 'block';
         document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
         menu.style.display = isVisible ? 'none' : 'block';
         search.value = '';
-        renderOptions(dropdown);
+        if (isCharacter) {
+          renderCharacterOptions(dropdown);
+        } else {
+          renderLightconeOptions(dropdown);
+        }
         search.focus();
       });
 
-      // Filter on typing
-      search.addEventListener('input', () => renderOptions(dropdown));
-    });
+      search.addEventListener('input', () => {
+        if (isCharacter) {
+          renderCharacterOptions(dropdown);
+        } else {
+          renderLightconeOptions(dropdown);
+        }
+      });
+    }
+
+    document.querySelectorAll('.character-dropdown').forEach(dd => setupDropdown(dd, true));
+    document.querySelectorAll('.lightcone-dropdown').forEach(dd => setupDropdown(dd, false));
 
     // Close menus on outside click
     document.addEventListener('click', (e) => {
@@ -255,30 +320,184 @@
       "Cyrene": 1415,
     };
 
-    // === Export button logic ===
+    const lcToId = {
+    "This Love, Forever": 23052,
+    "Though Worlds Apart": 23051,
+    "To Evernight's Stars": 23049,
+    "Epoch Etched in Golden Blood": 23048,
+    "Why Does the Ocean Sing": 23047,
+    "The Hell Where Ideals Burn": 23046,
+    "A Thankless Coronation": 23045,
+    "Thus Burns the Dawn": 23044,
+    "Lies Dance on the Breeze": 23043,
+    "Long May Rainbows Adorn the Sky": 23042,
+    "Life Should Be Cast to Flames": 23041,
+    "Make Farewells More Beautiful": 23040,
+    "Flame of Blood, Blaze My Path": 23039,
+    "If Time Were a Flower": 23038,
+    "Into the Unreachable Veil": 23037,
+    "Time Woven Into Gold": 23036,
+    "Long Road Leads Home": 23035,
+    "A Grounded Ascent": 23034,
+    "Ninjutsu Inscription: Dazzling Evilbreaker": 23033,
+    "Scent Alone Stays True": 23032,
+    "I Venture Forth to Hunt": 23031,
+    "Dance at Sunset": 23030,
+    "Those Many Springs": 23029,
+    "Yet Hope Is Priceless": 23028,
+    "Sailing Towards a Second Life": 23027,
+    "Flowing Nightglow": 23026,
+    "Whereabouts Should Dreams Rest": 23025,
+    "Along the Passing Shore": 23024,
+    "Inherently Unjust Destiny": 23023,
+    "Reforged Remembrance": 23022,
+    "Earthly Escapade": 23021,
+    "Baptism of Pure Thought": 23020,
+    "Past Self in Mirror": 23019,
+    "An Instant Before A Gaze": 23018,
+    "Night of Fright": 23017,
+    "Worrisome, Blissful": 23016,
+    "Brighter Than the Sun": 23015,
+    "I Shall Be My Own Sword": 23014,
+    "Time Waits for No One": 23013,
+    "Sleep Like the Dead": 23012,
+    "She Already Shut Her Eyes": 23011,
+    "Before Dawn": 23010,
+    "The Unreachable Side": 23009,
+    "Echoes of the Coffin": 23008,
+    "Incessant Rain": 23007,
+    "Patience Is All You Need": 23006,
+    "Moment of Victory": 23005,
+    "In the Name of the World": 23004,
+    "But the Battle Isn't Over": 23003,
+    "Something Irreplaceable": 23002,
+    "In the Night": 23001,
+    "Night on the Milky Way": 23000,
+    "Memory's Curtain Never Falls": 24005,
+    "Eternal Calculus": 24004,
+    "Solitary Healing": 24003,
+    "Texture of Memories": 24002,
+    "Cruising in the Stellar Sea": 24001,
+    "On the Fall of an Aeon": 24000,
+    "Fly Into a Pink Tomorrow": 22006,
+    "The Forever Victual": 22005,
+    "The Great Cosmic Enterprise": 22004,
+    "Ninja Record: Sound Hunt": 22003,
+    "For Tomorrow's Journey": 22002,
+    "Hey, Over Here": 22001,
+    "Before the Tutorial Mission Starts": 22000,
+    "See You at the End": 21062,
+    "Holiday Thermae Escapade": 21061,
+    "A Dream Scented in Wheat": 21060,
+    "A Trail of Bygone Blood": 21058,
+    "The Flower Remembers": 21057,
+    "In Pursuit of the Wind": 21056,
+    "Unto Tomorrow's Morrow": 21055,
+    "The Story's Next Page": 21054,
+    "Journey, Forever Peaceful": 21053,
+    "Sweat Now, Cry Less": 21052,
+    "Geniuses' Greetings": 21051,
+    "Victory In a Blink": 21050,
+    "Dream's Montage": 21048,
+    "Shadowed by Night": 21047,
+    "Poised to Bloom": 21046,
+    "After the Charmony Fall": 21045,
+    "Boundless Choreo": 21044,
+    "Concert for Two": 21043,
+    "Indelible Promise": 21042,
+    "It's Showtime": 21041,
+    "The Day The Cosmos Fell": 21040,
+    "Destiny's Threads Forewoven": 21039,
+    "Flames Afar": 21038,
+    "Final Victor": 21037,
+    "Dreamville Adventure": 21036,
+    "What Is Real?": 21035,
+    "Today Is Another Peaceful Day": 21034,
+    "Nowhere to Run": 21033,
+    "Carve the Moon, Weave the Clouds": 21032,
+    "Return to Darkness": 21031,
+    "This Is Me!": 21030,
+    "We Will Meet Again": 21029,
+    "Warmth Shortens Cold Nights": 21028,
+    "The Seriousness of Breakfast": 21027,
+    "Woof! Walk Time!": 21026,
+    "Past and Future": 21025,
+    "River Flows in Spring": 21024,
+    "We Are Wildfire": 21023,
+    "Fermata": 21022,
+    "Quid Pro Quo": 21021,
+    "Geniuses' Repose": 21020,
+    "Under the Blue Sky": 21019,
+    "Dance! Dance! Dance!": 21018,
+    "Subscribe for More!": 21017,
+    "Trend of the Universal Market": 21016,
+    "Resolution Shines As Pearls of Sweat": 21015,
+    "Perfect Timing": 21014,
+    "Make the World Clamor": 21013,
+    "A Secret Vow": 21012,
+    "Planetary Rendezvous": 21011,
+    "Swordplay": 21010,
+    "Landau's Choice": 21009,
+    "Eyes of the Prey": 21008,
+    "Shared Feeling": 21007,
+    "The Birth of the Self": 21006,
+    "The Moles Welcome You": 21005,
+    "Memories of the Past": 21004,
+    "Only Silence Remains": 21003,
+    "Day One of My New Life": 21002,
+    "Good Night and Sleep Well": 21001,
+    "Post-Op Conversation": 21000,
+    "Reminiscence": 20022,
+    "Shadowburn": 20021,
+    "Sagacity": 20020,
+    "Mediation": 20019,
+    "Hidden Shadow": 20018,
+    "Pioneering": 20017,
+    "Mutual Demise": 20016,
+    "Multiplication": 20015,
+    "Adversarial": 20014,
+    "Passkey": 20013,
+    "Meshing Cogs": 20012,
+    "Loop": 20011,
+    "Defense": 20010,
+    "Shattered Home": 20009,
+    "Fine Fruit": 20008,
+    "Darting Arrow": 20007,
+    "Data Bank": 20006,
+    "Chorus": 20005,
+    "Void": 20004,
+    "Amber": 20003,
+    "Collapsing Sky": 20002,
+    "Cornucopia": 20001,
+    "Arrows": 20000
+    };
+
     document.getElementById("export-btn").addEventListener("click", () => {
-      const selected = getAllSelectedValues();
-      let lines = [];
 
-      selected.forEach(char => {
-        const id = charToId[char];
-        if (id) {
-          lines.push(`encode_battle_avatar ${id}, 80, 6, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE`);
-        }
-      });
+    const charDropdowns = document.querySelectorAll('.character-dropdown .dropdown-button');
+    const lcDropdowns = document.querySelectorAll('.lightcone-dropdown .dropdown-button');
 
-      if (lines.length === 0) {
-        alert("Please select at least one character!");
-        return;
+    let lines = [];
+
+    charDropdowns.forEach((charBtn, index) => {
+      const charName = charBtn.textContent;
+      const lcName = lcDropdowns[index].textContent;
+
+      const charId = charToId[charName];
+      const lcId = lcToId[lcName];
+
+      if (charId && lcId) {
+        lines.push(`encode_battle_avatar ${charId}, 80, 6, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE, ${lcId}, 80, 6, 5`);
       }
-
-      const blob = new Blob([lines.join("\n")], { type: "text/plain" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "team_config.asm";
-      link.click();
-      URL.revokeObjectURL(link.href);
     });
+
+    const blob = new Blob([lines.join("\n")], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "team_config.asm";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
 
     // Initial render
     updateAllDropdowns();
@@ -286,4 +505,3 @@
 
 </body>
 </html>
-
