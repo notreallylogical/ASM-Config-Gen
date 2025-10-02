@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ASM Config</title>
+  <button id="export-btn">Download</button>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-container {
+      margin-bottom: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 300px;
+    }
+
+    .dropdown-button {
+      width: 100%;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      display: none;
+      z-index: 10;
+    }
+
+    .dropdown-search {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .dropdown-options {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-options div {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-options div:hover {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Character</h2>
+
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-button">Select Character</div>
+      <div class="dropdown-menu">
+        <input type="text" class="dropdown-search" placeholder="Search...">
+        <div class="dropdown-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-button">Select Character</div>
+      <div class="dropdown-menu">
+        <input type="text" class="dropdown-search" placeholder="Search...">
+        <div class="dropdown-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-button">Select Character</div>
+      <div class="dropdown-menu">
+        <input type="text" class="dropdown-search" placeholder="Search...">
+        <div class="dropdown-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown-container">
+    <div class="dropdown">
+      <div class="dropdown-button">Select Character</div>
+      <div class="dropdown-menu">
+        <input type="text" class="dropdown-search" placeholder="Search...">
+        <div class="dropdown-options"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const characters = [
+      "Acheron", "Aglaea", "Anaxa", "Archer", "Argenti", "Arlan", "Asta", "Aventurine",
+      "Bailu", "Black Swan", "Blade", "Boothill", "Bronya", "Castorice", "Cerydra", "Cipher",
+      "Clara", "Cyrene", "Dan Heng", "Dan Heng · Imbibitor Lunae", "Dan Heng · Permansor Terrae",
+      "Destruction Female MC", "Destruction Male MC", "Dr. Ratio", "Evernight", "Feixiao", "Firefly",
+      "Fugue", "Fu Xuan", "Gallagher", "Gepard", "Guinaifen", "Hanya", "Harmony Female MC",
+      "Harmony Male MC", "Herta", "Hook", "Huohuo", "Hysilens", "Hyacine", "Jade", "Jiaoqiu",
+      "Jing Yuan", "Jingliu", "Kafka", "Lingsha", "Luka", "Luocha", "Lynx", "March 7th",
+      "March 7th (Hunt)", "Misha", "Moze", "Mydei", "Natasha", "Pela", "Phainon",
+      "Preservation Female MC", "Preservation Male MC", "Qingque", "Rappa",
+      "Remembrance Female MC", "Remembrance Male MC", "Robin", "Ruan Mei", "Saber",
+      "Sampo", "Seele", "Serval", "Silver Wolf", "Sparkle", "Sunday", "Sushang",
+      "The Herta", "Tingyun", "Topaz", "Tribbie", "Welt", "Xueyi", "Yanqing",
+      "Yukong", "Yunli"
+    ].sort();
+
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    function getAllSelectedValues() {
+      return Array.from(dropdowns)
+        .map(d => d.querySelector('.dropdown-button').textContent)
+        .filter(text => text !== 'Select Character');
+    }
+
+    function renderOptions(dropdown) {
+      const searchInput = dropdown.querySelector('.dropdown-search');
+      const optionsContainer = dropdown.querySelector('.dropdown-options');
+      const selectedValues = getAllSelectedValues().filter(val => val !== dropdown.querySelector('.dropdown-button').textContent);
+      const filter = searchInput.value.toLowerCase();
+
+      optionsContainer.innerHTML = '';
+      const filtered = characters.filter(c => !selectedValues.includes(c) && c.toLowerCase().includes(filter));
+      filtered.forEach(char => {
+        const div = document.createElement('div');
+        div.textContent = char;
+        div.addEventListener('click', () => {
+          dropdown.querySelector('.dropdown-button').textContent = char;
+          dropdown.querySelector('.dropdown-menu').style.display = 'none';
+          updateAllDropdowns();
+        });
+        optionsContainer.appendChild(div);
+      });
+    }
+
+    function updateAllDropdowns() {
+      dropdowns.forEach(dropdown => renderOptions(dropdown));
+    }
+
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropdown-button');
+      const menu = dropdown.querySelector('.dropdown-menu');
+      const search = dropdown.querySelector('.dropdown-search');
+
+      // Toggle menu
+      button.addEventListener('click', () => {
+        const isVisible = menu.style.display === 'block';
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+        menu.style.display = isVisible ? 'none' : 'block';
+        search.value = '';
+        renderOptions(dropdown);
+        search.focus();
+      });
+
+      // Filter on typing
+      search.addEventListener('input', () => renderOptions(dropdown));
+    });
+
+    // Close menus on outside click
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+      }
+    });
+
+    const charToId = {
+      "March 7th": 1001,
+      "Dan Heng": 1002,
+      "Himeko": 1003,
+      "Welt": 1004,
+      "Kafka": 1005,
+      "Silver Wolf": 1006,
+      "Arlan": 1008,
+      "Asta": 1009,
+      "Saber": 1014,
+      "Archer": 1015,
+      "Herta": 1013,
+      "Bronya": 1101,
+      "Seele": 1102,
+      "Serval": 1103,
+      "Gepard": 1104,
+      "Natasha": 1105,
+      "Pela": 1106,
+      "Clara": 1107,
+      "Sampo": 1108,
+      "Hook": 1109,
+      "Lynx": 1110,
+      "Luka": 1111,
+      "Topaz": 1112,
+      "Qingque": 1201,
+      "Tingyun": 1202,
+      "Luocha": 1203,
+      "Jing Yuan": 1204,
+      "Blade": 1205,
+      "Sushang": 1206,
+      "Yukong": 1207,
+      "Fu Xuan": 1208,
+      "Yanqing": 1209,
+      "Guinaifen": 1210,
+      "Bailu": 1211,
+      "Jingliu": 1212,
+      "Dan Heng · Imbibitor Lunae": 1213,
+      "Xueyi": 1214,
+      "Hanya": 1215,
+      "Huohuo": 1217,
+      "Jiaoqiu": 1218,
+      "Feixiao": 1220,
+      "Yunli": 1221,
+      "Lingsha": 1222,
+      "Moze": 1223,
+      "March 7th (Hunt)": 1224,
+      "Fugue": 1225,
+      "Gallagher": 1301,
+      "Argenti": 1302,
+      "Ruan Mei": 1303,
+      "Aventurine": 1304,
+      "Dr. Ratio": 1305,
+      "Sparkle": 1306,
+      "Black Swan": 1307,
+      "Acheron": 1308,
+      "Robin": 1309,
+      "Firefly": 1310,
+      "Misha": 1312,
+      "Sunday": 1313,
+      "Jade": 1314,
+      "Boothill": 1315,
+      "Rappa": 1317,
+      "The Herta": 1401,
+      "Aglaea": 1402,
+      "Tribbie": 1403,
+      "Mydei": 1404,
+      "Anaxa": 1405,
+      "Castorice": 1407,
+      "Cipher": 1406,
+      "Hyacine": 1409,
+      "Phainon": 1408,
+      "Hysilens": 1410,
+      "Cerydra": 1412,
+      "Evernight": 1413,
+      "Dan Heng · Permansor Terrae": 1414,
+      "Cyrene": 1415,
+      "Destruction Male MC": 8001,
+      "Destruction Female MC": 8002,
+      "Preservation Male MC": 8003,
+      "Preservation Female MC": 8004,
+      "Harmony Male MC": 8005,
+      "Harmony Female MC": 8006,
+      "Remembrance Male MC": 8007,
+      "Remembrance Female MC": 8008
+    };
+
+    // === Export button logic ===
+    document.getElementById("export-btn").addEventListener("click", () => {
+      const selected = getAllSelectedValues();
+      let lines = [];
+
+      selected.forEach(char => {
+        const id = charToId[char];
+        if (id) {
+          lines.push(`encode_battle_avatar ${id}, 80, 6, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE`);
+        }
+      });
+
+      if (lines.length === 0) {
+        alert("Please select at least one character!");
+        return;
+      }
+
+      const blob = new Blob([lines.join("\n")], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "team_config.asm";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+
+    // Initial render
+    updateAllDropdowns();
+  </script>
+
+</body>
+</html>
