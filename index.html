@@ -1401,8 +1401,8 @@
           line += `, ${relicFull}, 15, ${mainId}`;
           for (let i = 0; i < 4; i++) {
             const sid = subIdVals[i] || 0;
-            const cnt = (parseInt(numVals[i]) + 1 || "0").toString();
-            line += `, ${sid}, ${cnt}, 1`;
+            const cnt = (parseInt(numVals[i]) + 1 || "1").toString();
+            line += `, ${sid}, ${cnt}, 2`;
           }
         });
 
@@ -1455,8 +1455,8 @@
           line += `, ${planarFull}, 15, ${mainId}`;
           for (let i = 0; i < 4; i++) {
             const sid = subIdVals[i] || 0;
-            const cnt = (parseInt(numVals[i]) + 1 || "0").toString();
-            line += `, ${sid}, ${cnt}, 1`;
+            const cnt = (parseInt(numVals[i]) + 1 || "1").toString();
+            line += `, ${sid}, ${cnt}, 2`;
           }
         });
         outputLines.push(line);
@@ -1476,3 +1476,4 @@
     document.getElementById("export-btn").addEventListener("click", handler)  
 </script></body>
 </html>
+
