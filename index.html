@@ -1345,11 +1345,11 @@
         const charName = charBtn.textContent.trim();
         if (!charToId[charName]) return;
         const charId = charToId[charName];
-        const charRank = document.querySelectorAll('.char-rank')[idx].value;
+        const charRank = document.querySelectorAll('.char-rank')[idx].value || 0;
 
         const lcName = lcButtons[idx] ? lcButtons[idx].textContent.trim() : "";
         const lcId = lcToId[lcName] || 0;
-        const lcRank = document.querySelectorAll('.lc-rank')[idx].value;
+        const lcRank = document.querySelectorAll('.lc-rank')[idx].value || 1;
 
         let line = `encode_battle_avatar ${charId}, 80, ${charRank}, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE, ${lcId}, 80, 6, ${lcRank}`;
 
@@ -1476,4 +1476,5 @@
     document.getElementById("export-btn").addEventListener("click", handler)  
 </script></body>
 </html>
+
 
