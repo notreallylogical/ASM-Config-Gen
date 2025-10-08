@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ASM Config</title>
-  <button id="export-btn">Download</button>
-  <style>
+<meta charset="utf-8"/>
+<title>ASM Config</title>
+<button id="export-btn">Download</button>
+<style>
     body {
       font-family: sans-serif;
       padding: 40px;
@@ -60,94 +60,623 @@
     .dropdown-options div:hover {
       background-color: #eee;
     }
-  </style>
+
+    .relic-row {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    }
+
+    .large-dropdown {
+    width: 300px;
+    }
+
+    .head-dropdown {
+    width: 75px;
+    }
+    .hand-dropdown {
+    width: 75px;
+    }
+    .body-dropdown {
+    width: 75px;
+    }
+    .boots-dropdown {
+    width: 75px;
+    }
+    .orb-dropdown {
+    width: 75px;
+    }
+    .rope-dropdown {
+    width: 75px;
+    }
+    .sub-dropdown {
+    width: 75px;
+    }
+
+    .small-dropdown .dropdown-button {
+    padding: 12px;
+    font-size: 12px;
+    }
+  
+.relic-values {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.relic-num {
+  width: 45px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
-
-  <h2>Character</h2>
-
-  <div class="dropdown-container">
-    <div class="dropdown character-dropdown">
-      <div class="dropdown-button">Select Character</div>
-      <div class="dropdown-menu">
-        <input type="text" class="dropdown-search" placeholder="Search...">
-        <div class="dropdown-options"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="dropdown-container">
-    <div class="dropdown character-dropdown">
-      <div class="dropdown-button">Select Character</div>
-      <div class="dropdown-menu">
-        <input type="text" class="dropdown-search" placeholder="Search...">
-        <div class="dropdown-options"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="dropdown-container">
-    <div class="dropdown character-dropdown">
-      <div class="dropdown-button">Select Character</div>
-      <div class="dropdown-menu">
-        <input type="text" class="dropdown-search" placeholder="Search...">
-        <div class="dropdown-options"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="dropdown-container">
-    <div class="dropdown character-dropdown">
-      <div class="dropdown-button">Select Character</div>
-      <div class="dropdown-menu">
-        <input type="text" class="dropdown-search" placeholder="Search...">
-        <div class="dropdown-options"></div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-      <h2>Lightcone</h2>
-      <div class="dropdown-container">
-        <div class="dropdown lightcone-dropdown">
-          <div class="dropdown-button">Select Lightcone</div>
-          <div class="dropdown-menu">
-            <input type="text" class="dropdown-search" placeholder="Search...">
-            <div class="dropdown-options"></div>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown-container">
-        <div class="dropdown lightcone-dropdown">
-          <div class="dropdown-button">Select Lightcone</div>
-          <div class="dropdown-menu">
-            <input type="text" class="dropdown-search" placeholder="Search...">
-            <div class="dropdown-options"></div>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown-container">
-        <div class="dropdown lightcone-dropdown">
-          <div class="dropdown-button">Select Lightcone</div>
-          <div class="dropdown-menu">
-            <input type="text" class="dropdown-search" placeholder="Search...">
-            <div class="dropdown-options"></div>
-          </div>
-        </div>
-      </div>
-      <div class="dropdown-container">
-        <div class="dropdown lightcone-dropdown">
-          <div class="dropdown-button">Select Lightcone</div>
-          <div class="dropdown-menu">
-            <input type="text" class="dropdown-search" placeholder="Search...">
-            <div class="dropdown-options"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
+<h2>Character</h2>
+<div class="dropdown-container">
+<div class="dropdown character-dropdown">
+<div class="dropdown-button">Select Character</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown character-dropdown">
+<div class="dropdown-button">Select Character</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown character-dropdown">
+<div class="dropdown-button">Select Character</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown character-dropdown">
+<div class="dropdown-button">Select Character</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div>
+<h2>Lightcone</h2>
+<div class="dropdown-container">
+<div class="dropdown lightcone-dropdown">
+<div class="dropdown-button">Select Lightcone</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown lightcone-dropdown">
+<div class="dropdown-button">Select Lightcone</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown lightcone-dropdown">
+<div class="dropdown-button">Select Lightcone</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+<div class="dropdown-container">
+<div class="dropdown lightcone-dropdown">
+<div class="dropdown-button">Select Lightcone</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<h2>Character 1 Relics</h2>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Head</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown head-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Hand</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown hand-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Body</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown body-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Boots</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown boots-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Orb</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown orb-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Rope</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown rope-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<h2>Character 2 Relics</h2>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Head</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown head-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Hand</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown hand-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Body</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown body-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Boots</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown boots-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Orb</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown orb-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Rope</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown rope-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<h2>Character 3 Relics</h2>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Head</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown head-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Hand</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown hand-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Body</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown body-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Boots</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown boots-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Orb</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown orb-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Rope</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown rope-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<h2>Character 4 Relics</h2>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Head</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown head-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Hand</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown hand-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Body</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown body-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown relic-dropdown">
+<div class="dropdown-button">Select Boots</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown boots-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Orb</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown orb-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<div class="relic-row">
+<div class="dropdown planar-dropdown">
+<div class="dropdown-button">Select Rope</div>
+<div class="dropdown-menu">
+<input class="dropdown-search" placeholder="Search..." type="text"/>
+<div class="dropdown-options"></div>
+</div>
+</div>
+<div class="dropdown rope-dropdown"><div class="dropdown-button">Main</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 1</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 2</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 3</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="dropdown sub-dropdown"><div class="dropdown-button">Sub 4</div><div class="dropdown-menu"><input class="dropdown-search" placeholder="Search..." type="text"/><div class="dropdown-options"></div></div></div>
+<div class="relic-values">
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+<input class="relic-num" min="0" placeholder="0" type="number"/>
+</div>
+</div>
+<script>
     const characters = [
       "Acheron", "Aglaea", "Anaxa", "Archer", "Argenti", "Arlan", "Asta", "Aventurine",
       "Bailu", "Black Swan", "Blade", "Boothill", "Bronya", "Castorice", "Cerydra", "Cipher",
@@ -165,6 +694,24 @@
     "A Dream Scented in Wheat", "A Secret Vow", "A Trail of Bygone Blood", "After the Charmony Fall", "Before the Tutorial Mission Starts", "Boundless Choreo", "Carve the Moon, Weave the Clouds", "Concert for Two", "Dance! Dance! Dance!", "Day One of My New Life", "Destiny's Threads Forewoven", "Dream's Montage", "Dreamville Adventure", "Eyes of the Prey", "Fermata", "Final Victor", "Flames Afar", "Fly Into a Pink Tomorrow", "For Tomorrow's Journey", "Geniuses' Greetings", "Geniuses' Repose", "Good Night and Sleep Well", "Hey, Over Here", "Holiday Thermae Escapade", "Indelible Promise", "In Pursuit of the Wind", "It's Showtime", "Journey, Forever Peaceful", "Landau's Choice", "Make the World Clamor", "Memories of the Past", "Nowhere to Run", "Ninja Record: Sound Hunt", "Only Silence Remains", "Past and Future", "Perfect Timing", "Planetary Rendezvous", "Poised to Bloom", "Post-Op Conversation", "Quid Pro Quo", "Resolution Shines As Pearls of Sweat", "Return to Darkness", "River Flows in Spring", "Shadowed by Night", "Shared Feeling", "Subscribe for More!", "Sweat Now, Cry Less", "Swordplay", "The Birth of the Self", "The Day The Cosmos Fell", "The Flower Remembers", "The Forever Victual", "The Great Cosmic Enterprise", "The Moles Welcome You", "The Seriousness of Breakfast", "The Story's Next Page", "This Is Me!", "Today Is Another Peaceful Day", "Trend of the Universal Market", "Unto Tomorrow's Morrow", "Under the Blue Sky", "Victory In a Blink", "Warmth Shortens Cold Nights", "We Are Wildfire", "We Will Meet Again", "What Is Real?", "Woof! Walk Time!", "See You at the End",
     "Adversarial", "Amber", "Arrows", "Chorus", "Collapsing Sky", "Cornucopia", "Darting Arrow", "Data Bank", "Defense", "Fine Fruit", "Hidden Shadow", "Loop", "Mediation", "Meshing Cogs", "Multiplication", "Mutual Demise", "Passkey", "Pioneering", "Reminiscence", "Sagacity", "Shadowburn", "Shattered Home", "Void"
     ]
+
+    const relics = ["Band of Sizzling Thunder","Champion of Streetwise Boxing","Eagle of Twilight Line","Firesmith of Lava-Forging","Genius of Brilliant Stars","Guard of Wuthering Snow","Hero of Triumphant Song","Hunter of Glacial Forest","Iron Cavalry Against the Scourge","Knight of Purity Palace","Longevous Disciple","Messenger Traversing Hackerspace","Musketeer of Wild Wheat","Passerby of Wandering Cloud","Pioneer Diver of Dead Waters","Poet of Mourning Collapse","Prisoner in Deep Confinement","Sacerdos' Relived Ordeal","Scholar Lost in Erudition","Self-Enshrouded Recluse","The Ashblazing Grand Duke","The Wind-Soaring Valorous","Thief of Shooting Meteor","Wastelander of Banditry Desert","Warrior Goddess of Sun and Thunder","Watchmaker, Master of Dream Machinations","Wavestrider Captain","World-Remaking Deliverer"]
+
+    const planars = ["Amphoreus, The Eternal Land","Arcadia of Woven Dreams","Belobog of the Architects","Bone Collection's Serene Demesne","Broken Keel","Celestial Differentiator","Duran, Dynasty of Running Wolves","Firmament Frontline: Glamoth","Fleet of the Ageless","Forge of the Kalpagni Lantern","Giant Tree of Rapt Brooding","Inert Salsotto","Izumo Gensei and Takama Divine Realm","Lushaka, the Sunken Seas","Pan-Cosmic Commercial Enterprise","Penacony, Land of the Dreams","Revelry by the Sea","Rutilant Arena","Sigonia, the Unclaimed Desolation","Space Sealing Station","Sprightly Vonwacq","Talia: Kingdom of Banditry","Tengoku@Livestream"]
+
+    const head_main = ["HP"]
+
+    const hand_main = ["ATK"]
+
+    const body_main = ["Crit Rate", "Crit DMG", "ATK%", "HP%", "DEF%", "Effect Hit Rate", "Outgoing Healing"]
+
+    const boots_main = ["Speed", "ATK%", "HP%", "DEF%"]
+
+    const orb_main = ["ATK%", "HP%", "DEF%", "Physical DMG", "Fire DMG", "Ice DMG", "Wind DMG", "Lightning DMG", "Quantum DMG", "Imaginary DMG"]
+
+    const rope_main = ["Energy Regen Rate", "Break Effect", "ATK%", "HP%", "DEF%"]
+
+    const substats = ["Crit Rate", "Crit DMG", "Speed", "ATK%", "ATK", "HP%", "HP", "DEF%", "DEF", "Break Effect", "Effect Hit Rate", "Effect Res"]
 
     function renderCharacterOptions(dropdown) {
       const searchInput = dropdown.querySelector('.dropdown-search');
@@ -192,7 +739,6 @@
       const searchInput = dropdown.querySelector('.dropdown-search');
       const optionsContainer = dropdown.querySelector('.dropdown-options');
       const filter = searchInput.value.toLowerCase();
-
       optionsContainer.innerHTML = '';
       const filtered = lightcones.filter(lc => lc.toLowerCase().includes(filter));
       filtered.forEach(lc => {
@@ -206,7 +752,160 @@
       });
     }
 
-    function setupDropdown(dropdown, isCharacter) {
+    function renderRelicOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = relics.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderPlanarOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = planars.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderHeadOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = head_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderHandOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = hand_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderBodyOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = body_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderBootsOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = boots_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderOrbOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = orb_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderRopeOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = rope_main.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function renderSubOptions(dropdown) {
+        const searchInput = dropdown.querySelector('.dropdown-search');
+        const optionsContainer = dropdown.querySelector('.dropdown-options');
+        const filter = searchInput.value.toLowerCase();
+        optionsContainer.innerHTML = '';
+        const filtered = substats.filter(r => r.toLowerCase().includes(filter));
+        filtered.forEach(r => {
+            const div = document.createElement('div');
+            div.textContent = r;
+            div.addEventListener('click', () => {
+            dropdown.querySelector('.dropdown-button').textContent = r;
+            dropdown.querySelector('.dropdown-menu').style.display = 'none';
+            });
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    function setupDropdown(dropdown, type) {
       const button = dropdown.querySelector('.dropdown-button');
       const menu = dropdown.querySelector('.dropdown-menu');
       const search = dropdown.querySelector('.dropdown-search');
@@ -216,27 +915,71 @@
         document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
         menu.style.display = isVisible ? 'none' : 'block';
         search.value = '';
-        if (isCharacter) {
-          renderCharacterOptions(dropdown);
-        } else {
-          renderLightconeOptions(dropdown);
+        if (type == 0) {
+            renderCharacterOptions(dropdown);
+        } else if (type == 1) {
+            renderLightconeOptions(dropdown);
+        } else if (type == 2) {
+            renderRelicOptions(dropdown);
+        } else if (type == 3) {
+            renderPlanarOptions(dropdown);
+        } else if (type == 4) {
+            renderHeadOptions(dropdown);
+        } else if (type == 5) {
+            renderHandOptions(dropdown);
+        } else if (type == 6) {
+            renderBodyOptions(dropdown);
+        } else if (type == 7) {
+            renderBootsOptions(dropdown);
+        } else if (type == 8) {
+            renderOrbOptions(dropdown);
+        } else if (type == 9) {
+            renderRopeOptions(dropdown);
+        } else if (type == 10) {
+            renderSubOptions(dropdown);
         }
         search.focus();
       });
 
       search.addEventListener('input', () => {
-        if (isCharacter) {
-          renderCharacterOptions(dropdown);
-        } else {
-          renderLightconeOptions(dropdown);
+        if (type == 0) {
+            renderCharacterOptions(dropdown);
+        } else if (type == 1) {
+            renderLightconeOptions(dropdown);
+        } else if (type == 2) {
+            renderRelicOptions(dropdown);
+        } else if (type == 3) {
+            renderPlanarOptions(dropdown);
+        } else if (type == 4) {
+            renderHeadOptions(dropdown);
+        } else if (type == 5) {
+            renderHandOptions(dropdown);
+        } else if (type == 6) {
+            renderBodyOptions(dropdown);
+        } else if (type == 7) {
+            renderBootsOptions(dropdown);
+        } else if (type == 8) {
+            renderOrbOptions(dropdown);
+        } else if (type == 9) {
+            renderRopeOptions(dropdown);
+        } else if (type == 10) {
+            renderSubOptions(dropdown);
         }
       });
     }
+    
+    document.querySelectorAll('.character-dropdown').forEach(dd => setupDropdown(dd, 0));
+    document.querySelectorAll('.lightcone-dropdown').forEach(dd => setupDropdown(dd, 1));
+    document.querySelectorAll('.relic-dropdown').forEach(dd => setupDropdown(dd, 2));
+    document.querySelectorAll('.planar-dropdown').forEach(dd => setupDropdown(dd, 3));
+    document.querySelectorAll('.head-dropdown').forEach(dd => setupDropdown(dd, 4))
+    document.querySelectorAll('.hand-dropdown').forEach(dd => setupDropdown(dd, 5))
+    document.querySelectorAll('.body-dropdown').forEach(dd => setupDropdown(dd, 6))
+    document.querySelectorAll('.boots-dropdown').forEach(dd => setupDropdown(dd, 7))
+    document.querySelectorAll('.orb-dropdown').forEach(dd => setupDropdown(dd, 8))
+    document.querySelectorAll('.rope-dropdown').forEach(dd => setupDropdown(dd, 9))
+    document.querySelectorAll('.sub-dropdown').forEach(dd => setupDropdown(dd, 10))
 
-    document.querySelectorAll('.character-dropdown').forEach(dd => setupDropdown(dd, true));
-    document.querySelectorAll('.lightcone-dropdown').forEach(dd => setupDropdown(dd, false));
-
-    // Close menus on outside click
     document.addEventListener('click', (e) => {
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
@@ -472,36 +1215,254 @@
     "Arrows": 20000
     };
 
-    document.getElementById("export-btn").addEventListener("click", () => {
+    const relicToId = {
+    "Self-Enshrouded Recluse": 128,
+    "World-Remaking Deliverer": 127,
+    "Wavestrider Captain": 126,
+    "Warrior Goddess of Sun and Thunder": 125,
+    "Poet of Mourning Collapse": 124,
+    "Hero of Triumphant Song": 123,
+    "Scholar Lost in Erudition": 122,
+    "Sacerdos' Relived Ordeal": 121,
+    "The Wind-Soaring Valorous": 120,
+    "Iron Cavalry Against the Scourge": 119,
+    "Watchmaker, Master of Dream Machinations": 118,
+    "Pioneer Diver of Dead Waters": 117,
+    "Prisoner in Deep Confinement": 116,
+    "The Ashblazing Grand Duke": 115,
+    "Messenger Traversing Hackerspace": 114,
+    "Longevous Disciple": 113,
+    "Wastelander of Banditry Desert": 112,
+    "Thief of Shooting Meteor": 111,
+    "Eagle of Twilight Line": 110,
+    "Band of Sizzling Thunder": 109,
+    "Genius of Brilliant Stars": 108,
+    "Firesmith of Lava-Forging": 107,
+    "Guard of Wuthering Snow": 106,
+    "Champion of Streetwise Boxing": 105,
+    "Hunter of Glacial Forest": 104,
+    "Knight of Purity Palace": 103,
+    "Musketeer of Wild Wheat": 102,
+    "Passerby of Wandering Cloud": 101
+    }
 
-    const charDropdowns = document.querySelectorAll('.character-dropdown .dropdown-button');
-    const lcDropdowns = document.querySelectorAll('.lightcone-dropdown .dropdown-button');
+    const planarToId = {
+    "Tengoku@Livestream": 324,
+    "Amphoreus, The Eternal Land": 323,
+    "Revelry by the Sea": 322,
+    "Arcadia of Woven Dreams": 321,
+    "Giant Tree of Rapt Brooding": 320,
+    "Bone Collection's Serene Demesne": 319,
+    "The Wondrous BananAmusement Park": 318,
+    "Lushaka, the Sunken Seas": 317,
+    "Forge of the Kalpagni Lantern": 316,
+    "Duran, Dynasty of Running Wolves": 315,
+    "Izumo Gensei and Takama Divine Realm": 314,
+    "Sigonia, the Unclaimed Desolation": 313,
+    "Penacony, Land of the Dreams": 312,
+    "Firmament Frontline: Glamoth": 311,
+    "Broken Keel": 310,
+    "Rutilant Arena": 309,
+    "Sprightly Vonwacq": 308,
+    "Talia: Kingdom of Banditry": 307,
+    "Inert Salsotto": 306,
+    "Celestial Differentiator": 305,
+    "Belobog of the Architects": 304,
+    "Pan-Cosmic Commercial Enterprise": 303,
+    "Fleet of the Ageless": 302,
+    "Space Sealing Station": 301
+    }
 
-    let lines = [];
+    const bodyToId = {
+      "HP%": 1,
+      "ATK%": 2,
+      "DEF%": 3,
+      "Crit Rate": 4,
+      "Crit DMG": 5,
+      "Outgoing Healing": 6,
+      "Effect Hit Rate": 7
+    }
 
-    charDropdowns.forEach((charBtn, index) => {
-      const charName = charBtn.textContent;
-      const lcName = lcDropdowns[index].textContent;
+    const bootsToId = {
+      "HP%": 1,
+      "ATK%": 2,
+      "DEF%": 3,
+      "Speed": 4
+    }
 
-      const charId = charToId[charName];
-      const lcId = lcToId[lcName];
+    const orbToId = {
+      "HP%": 1,
+      "ATK%": 2,
+      "DEF%": 3,
+      "Physical DMG": 4,
+      "Fire DMG": 5,
+      "Ice DMG": 6,
+      "Lightning DMG": 7,
+      "Wind DMG": 8,
+      "Quantum DMG": 9,
+      "Imaginary DMG": 10
+    }
 
-      if (charId && lcId) {
-        lines.push(`encode_battle_avatar ${charId}, 80, 6, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE, ${lcId}, 80, 6, 5`);
-      }
-    });
+    const ropeToId = {
+      "Break Effect": 1,
+      "Energy Regen Rate": 2,
+      "HP%": 3,
+      "ATK%": 4,
+      "DEF%": 5
+    }
 
-    const blob = new Blob([lines.join("\n")], { type: "text/plain" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "team_config.asm";
-    link.click();
-    URL.revokeObjectURL(link.href);
-  });
+    const subToId = {
+      "HP": 1,
+      "ATK": 2,
+      "DEF": 3,
+      "HP%": 4,
+      "ATK%": 5,
+      "DEF%": 6,
+      "Speed": 7,
+      "Crit Rate": 8,
+      "Crit DMG": 9,
+      "Effect Hit Rate": 10,
+      "Effect Res": 11,
+      "Break Effect": 12
+    }
+  
+    function handler() {
+      const charButtons = Array.from(document.querySelectorAll('.character-dropdown .dropdown-button'));
+      const lcButtons = Array.from(document.querySelectorAll('.lightcone-dropdown .dropdown-button'));
+      const relicSections = ['head','hand','body','boots','orb','rope'];
+      const relicRows = Array.from(document.querySelectorAll('.relic-row'));
+      const outputLines = [];
 
-    // Initial render
-    updateAllDropdowns();
-  </script>
+      charButtons.forEach((charBtn, idx) => {
+        const charName = charBtn.textContent.trim();
+        if (!charToId[charName]) return;
+        const charId = charToId[charName];
 
-</body>
+        const lcName = lcButtons[idx] ? lcButtons[idx].textContent.trim() : "";
+        const lcId = lcToId[lcName] || 0;
+
+        let line = `encode_battle_avatar ${charId}, 80, 6, 6, 10000, 10000, 10000, AVATAR_FORMAL_TYPE, ${lcId}, 80, 6, 5`;
+
+        relicSections.slice(0,-2).forEach((slot, sidx) => {
+          const row = relicRows[idx * 6 + sidx];
+
+          const relicName = row.querySelector('.relic-dropdown .dropdown-button')?.textContent.trim() || "";
+          let relicId = 0;
+
+          if (typeof relicToId !== "undefined" && relicToId[relicName] != null) {
+            relicId = relicToId[relicName];
+
+            if (!relicId && typeof relics !== "undefined" && Array.isArray(relics)) {
+              const exactIdx = relics.findIndex(r === relicName);
+              if (exactIdx !== -1) {
+                relicId = exactIdx + 1;
+              } else {
+                const includesIdx = relics.findIndex(r =>
+                  r.includes(relicName) ||
+                  relicName.includes(r)
+                );
+                if (includesIdx !== -1) relicId = includesIdx + 1;
+              }
+            }
+          }
+
+          const relicFull = `6${relicId}${sidx + 1}`;
+
+          const mainStat = row.querySelector(`.${slot}-dropdown .dropdown-button`)?.textContent.trim() || "";
+          let mainId = 0;
+
+          if (slot === "body") {
+            mainId = bodyToId[mainStat] || 0;
+          } else if (slot === "boots") {
+            mainId = bootsToId[mainStat] || 0;
+          } else if (slot === "orb") {
+            mainId = orbToId[mainStat] || 0;
+          } else if (slot === "rope") {
+            mainId = ropeToId[mainStat] || 0;
+          } else {
+            mainId = 1
+          }
+
+          const subButtons = Array.from(row.querySelectorAll(".sub-dropdown .dropdown-button"));
+          const nums = Array.from(row.querySelectorAll(".relic-num"));
+          const subIdVals = subButtons.map(b => subToId[b.textContent.trim()] || 0);
+          const numVals = nums.map(n => n.value.trim() || "0");
+
+          line += `, ${relicFull}, 15, ${mainId}`;
+          for (let i = 0; i < 4; i++) {
+            const sid = subIdVals[i] || 0;
+            const cnt = (parseInt(numVals[i]) + 1 || "0").toString();
+            line += `, ${sid}, ${cnt}, 1`;
+          }
+        });
+
+        relicSections.slice(-2).forEach((slot, sidx) => {
+          sidx = relicSections.length - 2 + sidx;
+          const row = relicRows[idx * 6 + sidx];
+
+          const planarName = row.querySelector('.planar-dropdown .dropdown-button')?.textContent.trim() || "";
+          let planarId = 0;
+
+          if (typeof planarToId !== "undefined" && planarToId[planarName] != null) {
+            planarId = planarToId[planarName];
+
+            if (!planarId && typeof planars !== "undefined" && Array.isArray(planars)) {
+              const exactIdx = planars.findIndex(r === planarName);
+              if (exactIdx !== -1) {
+                planarId = exactIdx + 1;
+              } else {
+                const includesIdx = planars.findIndex(r =>
+                  r.includes(planarName) ||
+                  planarName.includes(r)
+                );
+                if (includesIdx !== -1) planarId = includesIdx + 1;
+              }
+            }
+          }
+
+          const planarFull = `6${planarId}${sidx + 1}`;
+
+          const mainStat = row.querySelector(`.${slot}-dropdown .dropdown-button`)?.textContent.trim() || "";
+          let mainId = 0;
+
+          if (slot === "body") {
+            mainId = bodyToId[mainStat] || 0;
+          } else if (slot === "boots") {
+            mainId = bootsToId[mainStat] || 0;
+          } else if (slot === "orb") {
+            mainId = orbToId[mainStat] || 0;
+          } else if (slot === "rope") {
+            mainId = ropeToId[mainStat] || 0;
+          } else {
+            mainId = 1
+          }
+
+          const subButtons = Array.from(row.querySelectorAll(".sub-dropdown .dropdown-button"));
+          const nums = Array.from(row.querySelectorAll(".relic-num"));
+          const subIdVals = subButtons.map(b => subToId[b.textContent.trim()] || 0);
+          const numVals = nums.map(n => n.value.trim() || "0");
+
+          line += `, ${planarFull}, 15, ${mainId}`;
+          for (let i = 0; i < 4; i++) {
+            const sid = subIdVals[i] || 0;
+            const cnt = (parseInt(numVals[i]) + 1 || "0").toString();
+            line += `, ${sid}, ${cnt}, 1`;
+          }
+        });
+        outputLines.push(line);
+      });
+
+      const blob = new Blob([outputLines.join("\n")], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "team_config.asm";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("export-btn").addEventListener("click", handler)  
+</script></body>
 </html>
