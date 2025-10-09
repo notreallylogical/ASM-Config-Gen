@@ -1,0 +1,106 @@
+ body {
+      font-family: sans-serif;
+      padding: 40px;
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-container {
+      margin-bottom: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      width: 300px;
+    }
+
+    .dropdown-button {
+      width: 100%;
+      padding: 10px;
+      background-color: white;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      display: none;
+      z-index: 10;
+    }
+
+    .dropdown-search {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .dropdown-options {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-options div {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-options div:hover {
+      background-color: #eee;
+    }
+
+    .relic-row {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    }
+
+    .large-dropdown {
+    width: 300px;
+    }
+
+    .head-dropdown {
+    width: 75px;
+    }
+    .hand-dropdown {
+    width: 75px;
+    }
+    .body-dropdown {
+    width: 75px;
+    }
+    .boots-dropdown {
+    width: 75px;
+    }
+    .orb-dropdown {
+    width: 75px;
+    }
+    .rope-dropdown {
+    width: 75px;
+    }
+    .sub-dropdown {
+    width: 75px;
+    }
+
+    .small-dropdown .dropdown-button {
+    padding: 12px;
+    font-size: 12px;
+    }
+  
+    .relic-values {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    }
+    .relic-num {
+    width: 45px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    }
