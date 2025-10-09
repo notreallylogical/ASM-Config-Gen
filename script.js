@@ -840,4 +840,28 @@ const style = document.createElement('style')
 
 noDuplicateStat()
 
+function addUpgradeCounters(){
+  document.querySelectorAll('.relic-row').forEach(row=>{
+    const container = row.querySelector('.relic-values')
+    if(!container)return
+
+
+    const counter = document.createElement('span')
+    counter.className= 'upgradeCount'
+    container.insertAdjacentElement('afterend', counter)
+    const updateCounter=()=>{
+      const nums = container.querySelectorAll('.relic-num')
+      let total = 0
+      nums.forEach(n=>total += parseInt(n.value)||0)
+      counter.textContent =`Upgrades : ${total}/5`
+      counter.style.color = total >= 5 ? 'red' : '#333'
+    }
+    container.querySelectorAll('.relic-num').forEach(input=>{
+      input.addEventListener('input', updateCounter)
+      input.addEventListener('change', updateCounter)
+    })
+      updateCounter()
+  })
+}
+addUpgradeCounters()
 document.getElementById("export-btn").addEventListener("click", handler)
