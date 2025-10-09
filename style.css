@@ -2,6 +2,7 @@
       font-family: sans-serif;
       padding: 40px;
       background-color: #c8c8c8;
+     
     }
 
     .dropdown-container {
@@ -118,8 +119,8 @@
     transition: color 0.2s ease;
     }
     .credits{
+      margin-top: auto;
       font-family: sans-serif;
-      position: fixed;
       bottom: 10px;
       right: 15px;
       text-align: right;
@@ -129,6 +130,7 @@
     }
     .credits h3{
       margin : 0;
+      
       font-weight: normal;
       font-size:inherit;
     }
