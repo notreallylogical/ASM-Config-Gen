@@ -785,5 +785,59 @@ const characters = [
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
+    document.querySelectorAll('.relic-values').forEach(container=>{
+      const inputs = container.querySelectorAll('.relic-num');
+      const MAX_TOTAL = 5
+      inputs.forEach(input=>{
+        input.addEventListener('input',()=>{
+          let total = 0
+          inputs.forEach(i=>total+=parseInt(i.value)||0)
+          if(total >MAX_TOTAL){
+            const allowed = MAX_TOTAL - (total-(parseInt(input.value)||0))
+            input.value =  Math.max(allowed, 0)
+          }
+        })
+      })
+    })
 
-    document.getElementById("export-btn").addEventListener("click", handler)
+  function noDuplicateStat() {
+      document.querySelectorAll('.relic-row').forEach(row => {
+        row.querySelectorAll('.dropdown').forEach(dropdown => {
+          const btn = dropdown.querySelector('.dropdown-button')
+          const menu = dropdown.querySelector('.dropdown-menu')
+          const optionsContainer = dropdown.querySelector('.dropdown-options')
+
+          btn.addEventListener('click', () => {
+            setTimeout(() => {
+              const currentValue = btn.textContent.trim()
+              const selectedElsewhere = new Set(
+                Array.from(row.querySelectorAll('.dropdown-button'))
+                  .map(b => b.textContent.trim())
+                  .filter(t => t && !t.includes('Select') && t !== currentValue)
+              )
+
+              const options = optionsContainer.querySelectorAll('div')
+              options.forEach(opt => {
+                const text = opt.textContent.trim()
+                if (selectedElsewhere.has(text)) {
+                  opt.classList.add('disabled-option')
+                  opt.style.pointerEvents = 'none'
+                } else {
+                  opt.classList.remove('disabled-option')
+                  opt.style.pointerEvents = 'auto'
+                }
+              })
+            }, 20)
+          })
+        })
+      })
+  }
+
+const style = document.createElement('style')
+  style.textContent = `
+    .disabled-option { opacity: 0.45; user-select: none }`
+  document.head.appendChild(style)
+
+noDuplicateStat()
+
+document.getElementById("export-btn").addEventListener("click", handler)
