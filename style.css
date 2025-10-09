@@ -134,3 +134,19 @@
       font-weight: normal;
       font-size:inherit;
     }
+    .step-dropdown {
+      font-size: 12px;
+      font-family: sans-serif;
+      padding: 4px 6px;
+      width: 65px;
+      border: 1px solid #aaa;
+      border-radius: 10px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background 0.2s;
+      height : 40px;
+    }
+
+    .step-dropdown:hover {
+      background-color: #e0e0e0;
+    }

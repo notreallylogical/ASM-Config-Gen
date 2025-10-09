@@ -712,10 +712,16 @@ const characters = [
           const numVals = nums.map(n => n.value.trim() || "0");
 
           line += `, ${relicFull}, 15, ${mainId}`;
+          const stepSelection = Array.from(row.querySelectorAll('.step-dropdown'))
           for (let i = 0; i < 4; i++) {
             const sid = subIdVals[i] || 0;
             const cnt = (parseInt(numVals[i]) + 1 || "1").toString();
-            line += `, ${sid}, ${cnt}, 2`;
+            const rawStep = (stepSelection[i]?.value||"mid").trim().toLowerCase()
+            let mult = 1
+            if(rawStep === 'low') mult = 0;
+            else if(rawStep === 'high')mult = 2
+
+            line += `, ${sid}, ${cnt}, ${cnt*mult}`;
           }
         });
 
@@ -764,12 +770,17 @@ const characters = [
           const nums = Array.from(row.querySelectorAll(".relic-num"));
           const subIdVals = subButtons.map(b => subToId[b.textContent.trim()] || 0);
           const numVals = nums.map(n => n.value.trim() || "0");
+          const stepSelection = Array.from(row.querySelectorAll('.step-dropdown'))
 
           line += `, ${planarFull}, 15, ${mainId}`;
           for (let i = 0; i < 4; i++) {
             const sid = subIdVals[i] || 0;
             const cnt = (parseInt(numVals[i]) + 1 || "1").toString();
-            line += `, ${sid}, ${cnt}, 2`;
+            const rawStep = (stepSelection[i]?.value||'mid').trim().toLowerCase()
+            let mult = 1;
+            if(rawStep === 'low') mult = 0;
+            else if(rawStep === 'high') mult = 2;
+            line += `, ${sid}, ${cnt}, ${cnt*mult}`;
           }
         });
         outputLines.push(line);
@@ -864,4 +875,22 @@ function addUpgradeCounters(){
   })
 }
 addUpgradeCounters()
+
+function addStep(){
+  document.querySelectorAll('.sub-dropdown').forEach(sub=>{
+    if (sub.nextElementSibling?.classList.contains('step-dropdown')) return
+    const select = document.createElement('select')
+    select.className = 'step-dropdown'
+    select.innerHTML = 
+    `
+      <option value="low">Low</option>
+      <option value="mid" selected>Mid</option>
+      <option value="high">High</option>
+    `
+    sub.insertAdjacentElement('afterend', select)
+
+  })
+}
+addStep();
+
 document.getElementById("export-btn").addEventListener("click", handler)
