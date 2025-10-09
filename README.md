@@ -10,4 +10,4 @@ Made by [NVG](https://github.com/notreallylogical) and [SilverWolf](https://gith
 3. Adding constraints to prevent 🦽
 
 ## ACCESS
-asm-config-gen.vercel.app
+[Config Builder](asm-config-gen.vercel.app)
