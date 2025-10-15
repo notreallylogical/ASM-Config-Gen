@@ -944,9 +944,9 @@ function parseASMFile(text){
   const idToSub = invertMap(subToId || {})
 
   function stepToLabel(step) {
-    if (step == 2) return "High"
-    else if (step == 1) return "Mid"
-    return "Low"
+    if (step == 2) return "high"
+    else if (step == 1) return "mid"
+    return "low"
   }
   
   lines.forEach((line,index)=>{
@@ -1033,7 +1033,7 @@ function parseASMFile(text){
       }
       const subList = currRow.querySelectorAll(".sub-dropdown .dropdown-button")
       const cntList = currRow.querySelectorAll(".relic-num")
-      const stepList = currRow.querySelectorAll(".step-dropdown .dropdown-button")
+      const stepList = currRow.querySelectorAll(".step-dropdown")
 
       if (relicName) relicLocation.textContent = relicName;
       if (mainName) mainLocation.textContent = mainName;
@@ -1052,6 +1052,8 @@ function parseASMFile(text){
       stepList[1].value = stepToLabel(step2);
       stepList[2].value = stepToLabel(step3);
       stepList[3].value = stepToLabel(step4);
+
+      cntList[0].dispatchEvent(new Event("input"))
     });
     slots.slice(-2).forEach((slot, sidx) => {
       sidx = slots.length - 2 + sidx;
@@ -1104,7 +1106,7 @@ function parseASMFile(text){
       }
       const subList = currRow.querySelectorAll(".sub-dropdown .dropdown-button")
       const cntList = currRow.querySelectorAll(".relic-num")
-      const stepList = currRow.querySelectorAll(".step-dropdown .dropdown-button")
+      const stepList = currRow.querySelectorAll(".step-dropdown")
 
       if (relicName) relicLocation.textContent = relicName;
       if (mainName) mainLocation.textContent = mainName;
@@ -1123,6 +1125,8 @@ function parseASMFile(text){
       stepList[1].value = stepToLabel(step2);
       stepList[2].value = stepToLabel(step3);
       stepList[3].value = stepToLabel(step4);
+
+      cntList[0].dispatchEvent(new Event("input"))
     });
   });
 }
