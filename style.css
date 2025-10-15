@@ -1,4 +1,4 @@
- body {
+body {
       font-family: sans-serif;
       padding: 40px;
       background-color: #e8e9ea;
@@ -145,6 +145,18 @@
       cursor: pointer;
       transition: background 0.2s;
       height : 40px;
+    }
+
+    .step-dropdown:hover {
+      background-color: #e0e0e0;
+    }
+    #import-btn{
+      
+      background-color: rgb(161, 249, 161);
+    }
+    #export-btn{
+      background-color: rgb(230, 161, 161);
+    }
     }
 
     .step-dropdown:hover {
