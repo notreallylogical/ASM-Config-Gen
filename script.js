@@ -943,9 +943,10 @@ function parseASMFile(text){
   const idToRope = invertMap(ropeToId || {})
   const idToSub = invertMap(subToId || {})
 
-  function setButtonText(btn, value) {
-    if (!btn) return
-    btn.textContent = value
+  function stepToLabel(step) {
+    if (step == 2) return "High"
+    else if (step == 1) return "Mid"
+    return "Low"
   }
   
   lines.forEach((line,index)=>{
@@ -959,20 +960,169 @@ function parseASMFile(text){
 
 
     const charId = parseInt(values[0])
-    const eidolon = parseInt(values[3])
+    const eidolon = parseInt(values[2])
+
     const lcId = parseInt(values[8])
-    const lcSuperimposition = parseInt(values[10])
-    const charName = Object.keys(charToId).find(k => charToId[k] === charId)
-    const lcName = Object.keys(lcToId).find(k => lcToId[k] === lcId)
+    const lcSuperimposition = parseInt(values[11])
+
+    const charName = idToChar[charId]
+    const lcName = idToLC[lcId]
 
     if (charName) charDropdowns[index].textContent = charName;
     if (!isNaN(eidolon)) charRanks[index].value = eidolon;
     if (lcName) lcDropdowns[index].textContent = lcName;
     if (!isNaN(lcSuperimposition)) lcRanks[index].value = lcSuperimposition;
 
-    let ptr = 11;
     const slots = ['head','hand','body','boots','orb','rope']
-    
+
+    let idx = 12
+    slots.slice(0,-2).forEach((slot, sidx) => {
+      const relicId = parseInt(values[idx++].slice(1,4))
+      idx++;
+      
+      let mainId = 0
+      if (sidx < 2){
+        mainId = 1
+        idx++;
+      } else {
+        mainId = parseInt(values[idx++])
+      }
+
+      const sub1 = parseInt(values[idx++])
+      const cnt1 = parseInt(values[idx++]) - 1
+      const step1 = parseInt(values[idx++]) / (cnt1 + 1)
+      const sub2 = parseInt(values[idx++])
+      const cnt2 = parseInt(values[idx++]) - 1
+      const step2 = parseInt(values[idx++]) / (cnt2 + 1)
+      const sub3 = parseInt(values[idx++])
+      const cnt3 = parseInt(values[idx++]) - 1
+      const step3 = parseInt(values[idx++]) / (cnt3 + 1)
+      const sub4 = parseInt(values[idx++])
+      const cnt4 = parseInt(values[idx++]) - 1
+      const step4 = parseInt(values[idx++]) / (cnt4 + 1)
+
+      const relicName = idToRelic[relicId]
+
+      let mainName
+      if (sidx == 0){
+        mainName = "HP"
+      } else if (sidx == 1) {
+        mainName = "ATK"
+      } else if (sidx == 2) {
+        mainName = idToBody[mainId]
+      } else if (sidx == 3) {
+        mainName = idToBoots[mainId]
+      }
+
+      const subName1 = idToSub[sub1]
+      const subName2 = idToSub[sub2]
+      const subName3 = idToSub[sub3]
+      const subName4 = idToSub[sub4]
+
+      const currRow = relicRows[index * 6 + sidx]
+      const relicLocation = currRow.querySelector(".relic-dropdown .dropdown-button")
+      let mainLocation;
+      if (sidx == 0){
+        mainLocation = currRow.querySelector(".head-dropdown .dropdown-button")
+      } else if (sidx == 1) {
+        mainLocation = currRow.querySelector(".hand-dropdown .dropdown-button")
+      } else if (sidx == 2) {
+        mainLocation = currRow.querySelector(".body-dropdown .dropdown-button")
+      } else if (sidx == 3) {
+        mainLocation = currRow.querySelector(".boots-dropdown .dropdown-button")
+      }
+      const subList = currRow.querySelectorAll(".sub-dropdown .dropdown-button")
+      const cntList = currRow.querySelectorAll(".relic-num")
+      const stepList = currRow.querySelectorAll(".step-dropdown .dropdown-button")
+
+      if (relicName) relicLocation.textContent = relicName;
+      if (mainName) mainLocation.textContent = mainName;
+
+      if (subName1) subList[0].textContent = subName1;
+      if (subName2) subList[1].textContent = subName2;
+      if (subName3) subList[2].textContent = subName3;
+      if (subName4) subList[3].textContent = subName4;
+
+      if (cnt1) cntList[0].value = cnt1;
+      if (cnt2) cntList[1].value = cnt2;
+      if (cnt3) cntList[2].value = cnt3;
+      if (cnt4) cntList[3].value = cnt4;
+
+      stepList[0].value = stepToLabel(step1);
+      stepList[1].value = stepToLabel(step2);
+      stepList[2].value = stepToLabel(step3);
+      stepList[3].value = stepToLabel(step4);
+    });
+    slots.slice(-2).forEach((slot, sidx) => {
+      sidx = slots.length - 2 + sidx;
+
+      const relicId = parseInt(values[idx++].slice(1,4))
+      idx++;
+
+      let mainId = 0
+      if (sidx < 2){
+        mainId = 1
+        idx++;
+      } else {
+        mainId = parseInt(values[idx++])
+      }
+
+      const sub1 = parseInt(values[idx++])
+      const cnt1 = parseInt(values[idx++]) - 1
+      const step1 = parseInt(values[idx++]) / (cnt1 + 1)
+      const sub2 = parseInt(values[idx++])
+      const cnt2 = parseInt(values[idx++]) - 1
+      const step2 = parseInt(values[idx++]) / (cnt2 + 1)
+      const sub3 = parseInt(values[idx++])
+      const cnt3 = parseInt(values[idx++]) - 1
+      const step3 = parseInt(values[idx++]) / (cnt3 + 1)
+      const sub4 = parseInt(values[idx++])
+      const cnt4 = parseInt(values[idx++]) - 1
+      const step4 = parseInt(values[idx++]) / (cnt4 + 1)
+
+      const relicName = idToPlanar[relicId]
+
+      let mainName;
+      if (sidx == 4){
+        mainName = idToOrb[mainId]
+      } else if (sidx == 5) {
+        mainName = idToRope[mainId]
+      }
+
+      const subName1 = idToSub[sub1]
+      const subName2 = idToSub[sub2]
+      const subName3 = idToSub[sub3]
+      const subName4 = idToSub[sub4]
+
+      const currRow = relicRows[index * 6 + sidx]
+      const relicLocation = currRow.querySelector(".planar-dropdown .dropdown-button")
+      let mainLocation;
+      if (sidx == 4){
+        mainLocation = currRow.querySelector(".orb-dropdown .dropdown-button")
+      } else if (sidx == 5) {
+        mainLocation = currRow.querySelector(".rope-dropdown .dropdown-button")
+      }
+      const subList = currRow.querySelectorAll(".sub-dropdown .dropdown-button")
+      const cntList = currRow.querySelectorAll(".relic-num")
+      const stepList = currRow.querySelectorAll(".step-dropdown .dropdown-button")
+
+      if (relicName) relicLocation.textContent = relicName;
+      if (mainName) mainLocation.textContent = mainName;
+
+      if (subName1) subList[0].textContent = subName1;
+      if (subName2) subList[1].textContent = subName2;
+      if (subName3) subList[2].textContent = subName3;
+      if (subName4) subList[3].textContent = subName4;
+
+      if (cnt1) cntList[0].value = cnt1;
+      if (cnt2) cntList[1].value = cnt2;
+      if (cnt3) cntList[2].value = cnt3;
+      if (cnt4) cntList[3].value = cnt4;
+
+      stepList[0].value = stepToLabel(step1);
+      stepList[1].value = stepToLabel(step2);
+      stepList[2].value = stepToLabel(step3);
+      stepList[3].value = stepToLabel(step4);
+    });
   });
-  
 }
