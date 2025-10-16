@@ -8,5 +8,3 @@ Made by [nvg](https://github.com/notreallylogical) and [SilverWolf](https://gith
 1. :DDDDD
 
 
-## ACCESS
-[Config Builder](asm-config-gen.vercel.app)
