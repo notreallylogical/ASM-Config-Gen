@@ -7,7 +7,7 @@ const characters = [
       "Jing Yuan", "Jingliu", "Kafka", "Lingsha", "Luka", "Luocha", "Lynx", "March 7th",
       "Misha", "Moze", "Mydei", "Natasha", "Pela", "Phainon", "Qingque", "Rappa",
       "Robin", "Ruan Mei", "Saber", "Sampo", "Seele", "Serval", "Silver Wolf", "Sparkle", 
-      "Sunday", "Sushang", "The Herta", "Tingyun", "Topaz", "Tribbie", "Welt", "Xueyi", 
+      "Sunday", "Sushang", "The Herta", "Tingyun", "Topaz","Trailblazer(Remembrance)", "Tribbie", "Welt", "Xueyi", 
       "Yanqing", "Yukong", "Yunli"
     ]
 
@@ -382,6 +382,7 @@ const characters = [
       "Evernight": 1413,
       "Dan Heng · Permansor Terrae": 1414,
       "Cyrene": 1415,
+      "Trailblazer(Remembrance)": 8008,
     };
 
     const lcToId = {
