@@ -1,19 +1,19 @@
 const characters = [
-      "Acheron", "Aglaea", "Anaxa", "Archer", "Argenti", "Arlan", "Asta", "Aventurine",
+      "Acheron", "Aglaea", "Anaxa", "Archer", "Argenti", "Arlan","Ashveil", "Asta", "Aventurine",
       "Bailu", "Black Swan", "Blade", "Boothill", "Bronya", "Castorice", "Cerydra", "Cipher",
       "Clara", "Cyrene", "Dan Heng", "Dan Heng · Imbibitor Lunae", "Dan Heng · Permansor Terrae",
       "Dr. Ratio", "Evernight", "Feixiao", "Firefly", "Fugue", "Fu Xuan", "Gallagher", "Gepard", 
       "Guinaifen", "Hanya", "Herta", "Hook", "Huohuo", "Hysilens", "Hyacine", "Jade", "Jiaoqiu",
       "Jing Yuan", "Jingliu", "Kafka", "Lingsha", "Luka", "Luocha", "Lynx", "March 7th",
       "Misha", "Moze", "Mydei", "Natasha", "Pela", "Phainon", "Qingque", "Rappa",
-      "Robin", "Ruan Mei", "Saber", "Sampo", "Seele", "Serval", "Silver Wolf", "Sparkle", 
-      "Sunday", "Sushang", "The Herta", "Tingyun", "Topaz","Trailblazer(Remembrance)", "Tribbie", "Welt", "Xueyi", 
-      "Yanqing", "Yukong", "Yunli"
+      "Robin", "Ruan Mei", "Saber", "Sampo", "Seele", "Serval", "Silver Wolf", "Sparkle", "Sparxie", 
+      "Sunday", "Sushang", "The Dahlia", "The Herta", "Tingyun", "Topaz","Trailblazer(Remembrance)", "Tribbie", "Welt", "Xueyi", 
+      "Yanqing","Yao Guang", "Yukong", "Yunli"
     ]
 
     const lightcones = ["A Grounded Ascent", "A Thankless Coronation", "Along the Passing Shore", "An Instant Before A Gaze", "Baptism of Pure Thought", "Before Dawn", "Brighter Than the Sun", "But the Battle Isn't Over", "Cruising in the Stellar Sea", "Dance at Sunset", "Earthly Escapade", "Echoes of the Coffin", "Epoch Etched in Golden Blood", "Eternal Calculus", "Flame of Blood, Blaze My Path", "Flowing Nightglow", "Forever", "If Time Were a Flower", "I Shall Be My Own Sword", "I Venture Forth to Hunt", "Incessant Rain", "Inherently Unjust Destiny", "In the Name of the World", "In the Night", "Into the Unreachable Veil", "Lies Dance on the Breeze", "Life Should Be Cast to Flames", "Long May Rainbows Adorn the Sky", "Long Road Leads Home", "Make Farewells More Beautiful", "Memory's Curtain Never Falls", "Moment of Victory", "Night of Fright", "Night on the Milky Way", "Ninjutsu Inscription: Dazzling Evilbreaker", "On the Fall of an Aeon", "Past Self in Mirror", "Patience Is All You Need", "Reforged Remembrance", "Sailing Towards a Second Life", "Scent Alone Stays True", "She Already Shut Her Eyes", "Sleep Like the Dead", "Solitary Healing", "Something Irreplaceable", "Texture of Memories", "The Hell Where Ideals Burn", "The Unreachable Side", "This Love, Forever", "Those Many Springs", "Though Worlds Apart", "Thus Burns the Dawn", "Time Waits for No One", "Time Woven Into Gold", "To Evernight's Stars", "Whereabouts Should Dreams Rest", "Why Does the Ocean Sing", "Worrisome, Blissful", "Yet Hope Is Priceless", 
     "A Dream Scented in Wheat", "A Secret Vow", "A Trail of Bygone Blood", "After the Charmony Fall", "Before the Tutorial Mission Starts", "Boundless Choreo", "Carve the Moon, Weave the Clouds", "Concert for Two", "Dance! Dance! Dance!", "Day One of My New Life", "Destiny's Threads Forewoven", "Dream's Montage", "Dreamville Adventure", "Eyes of the Prey", "Fermata", "Final Victor", "Flames Afar", "Fly Into a Pink Tomorrow", "For Tomorrow's Journey", "Geniuses' Greetings", "Geniuses' Repose", "Good Night and Sleep Well", "Hey, Over Here", "Holiday Thermae Escapade", "Indelible Promise", "In Pursuit of the Wind", "It's Showtime", "Journey, Forever Peaceful", "Landau's Choice", "Make the World Clamor", "Memories of the Past", "Nowhere to Run", "Ninja Record: Sound Hunt", "Only Silence Remains", "Past and Future", "Perfect Timing", "Planetary Rendezvous", "Poised to Bloom", "Post-Op Conversation", "Quid Pro Quo", "Resolution Shines As Pearls of Sweat", "Return to Darkness", "River Flows in Spring", "Shadowed by Night", "Shared Feeling", "Subscribe for More!", "Sweat Now, Cry Less", "Swordplay", "The Birth of the Self", "The Day The Cosmos Fell", "The Flower Remembers", "The Forever Victual", "The Great Cosmic Enterprise", "The Moles Welcome You", "The Seriousness of Breakfast", "The Story's Next Page", "This Is Me!", "Today Is Another Peaceful Day", "Trend of the Universal Market", "Unto Tomorrow's Morrow", "Under the Blue Sky", "Victory In a Blink", "Warmth Shortens Cold Nights", "We Are Wildfire", "We Will Meet Again", "What Is Real?", "Woof! Walk Time!", "See You at the End",
-    "Adversarial", "Amber", "Arrows", "Chorus", "Collapsing Sky", "Cornucopia", "Darting Arrow", "Data Bank", "Defense", "Fine Fruit", "Hidden Shadow", "Loop", "Mediation", "Meshing Cogs", "Multiplication", "Mutual Demise", "Passkey", "Pioneering", "Reminiscence", "Sagacity", "Shadowburn", "Shattered Home", "Void"
+    "Adversarial", "Amber", "Arrows", "Chorus", "Collapsing Sky", "Cornucopia", "Darting Arrow", "Data Bank", "Defense", "Fine Fruit", "Hidden Shadow", "Loop", "Mediation", "Meshing Cogs", "Multiplication", "Mutual Demise", "Never Forget Her Flame", "Passkey", "Pioneering", "Reminiscence", "Sagacity", "Shadowburn", "Shattered Home", "Void"
     ]
 
     const relics = ["Band of Sizzling Thunder","Champion of Streetwise Boxing","Eagle of Twilight Line","Firesmith of Lava-Forging","Genius of Brilliant Stars","Guard of Wuthering Snow","Hero of Triumphant Song","Hunter of Glacial Forest","Iron Cavalry Against the Scourge","Knight of Purity Palace","Longevous Disciple","Messenger Traversing Hackerspace","Musketeer of Wild Wheat","Passerby of Wandering Cloud","Pioneer Diver of Dead Waters","Poet of Mourning Collapse","Prisoner in Deep Confinement","Sacerdos' Relived Ordeal","Scholar Lost in Erudition","Self-Enshrouded Recluse","The Ashblazing Grand Duke","The Wind-Soaring Valorous","Thief of Shooting Meteor","Wastelander of Banditry Desert","Warrior Goddess of Sun and Thunder","Watchmaker, Master of Dream Machinations","Wavestrider Captain","World-Remaking Deliverer"]
@@ -368,6 +368,7 @@ const characters = [
       "Jade": 1314,
       "Boothill": 1315,
       "Rappa": 1317,
+      "The Dahlia": 1321,
       "The Herta": 1401,
       "Aglaea": 1402,
       "Tribbie": 1403,
@@ -382,12 +383,16 @@ const characters = [
       "Evernight": 1413,
       "Dan Heng · Permansor Terrae": 1414,
       "Cyrene": 1415,
+      "Sparxie": 1501,
+      "Yao Guang": 1502,
+      "Ashveil":1504,
       "Trailblazer(Remembrance)": 8008,
     };
 
     const lcToId = {
     "This Love, Forever": 23052,
     "Though Worlds Apart": 23051,
+    "Never Forget Her Flame" : 23050,
     "To Evernight's Stars": 23049,
     "Epoch Etched in Golden Blood": 23048,
     "Why Does the Ocean Sing": 23047,
@@ -648,7 +653,135 @@ const characters = [
       "Break Effect": 12
     }
   
-    function handler() {
+    function exportToJSON() {
+    const charButtons = Array.from(document.querySelectorAll('.character-dropdown .dropdown-button'));
+    const lcButtons = Array.from(document.querySelectorAll('.lightcone-dropdown .dropdown-button'));
+    const relicRows = Array.from(document.querySelectorAll('.relic-row'));
+    const characters = [];
+
+    charButtons.forEach((charBtn, idx) => {
+      const charName = charBtn.textContent.trim();
+      if (!charToId[charName]) return;
+      
+      const charId = charToId[charName];
+      const charRank = parseInt(document.querySelectorAll('.char-rank')[idx].value) || 0;
+
+      // Get lightcone info
+      const lcName = lcButtons[idx] ? lcButtons[idx].textContent.trim() : "";
+      const lcId = lcToId[lcName] || 0;
+      const lcRank = parseInt(document.querySelectorAll('.lc-rank')[idx].value) || 1;
+
+      // Get relics (6 pieces)
+      const relics = [];
+      const slots = ['head', 'hand', 'body', 'boots', 'orb', 'rope'];
+
+      slots.forEach((slot, sidx) => {
+        const row = relicRows[idx * 6 + sidx];
+        let relicFullId, mainStatId;
+
+        // Determine if it's a regular relic or planar ornament
+        if (sidx < 4) {
+          // Regular relics (Head, Hand, Body, Boots)
+          const relicName = row.querySelector('.relic-dropdown .dropdown-button')?.textContent.trim() || "";
+          const relicId = relicToId[relicName] || 0;
+          
+          // Format: 6 + relicId + slot (e.g., 61011 for relic 101 slot 1)
+          relicFullId = relicId ? `6${relicId}${sidx + 1}` : `60${sidx + 1}`;
+
+          // Get main stat
+          if (sidx === 0) {
+            mainStatId = 1; // HP for head
+          } else if (sidx === 1) {
+            mainStatId = 1; // ATK for hand
+          } else if (sidx === 2) {
+            const bodyMain = row.querySelector('.body-dropdown .dropdown-button')?.textContent.trim() || "";
+            mainStatId = bodyToId[bodyMain] || 1;
+          } else if (sidx === 3) {
+            const bootsMain = row.querySelector('.boots-dropdown .dropdown-button')?.textContent.trim() || "";
+            mainStatId = bootsToId[bootsMain] || 1;
+          }
+        } else {
+          // Planar ornaments (Orb, Rope)
+          const planarName = row.querySelector('.planar-dropdown .dropdown-button')?.textContent.trim() || "";
+          const planarId = planarToId[planarName] || 0;
+          
+          // Format: 6 + planarId + slot (e.g., 63015 for planar 301 slot 5)
+          relicFullId = planarId ? `6${planarId}${sidx + 1}` : `60${sidx + 1}`;
+
+          if (sidx === 4) {
+            const orbMain = row.querySelector('.orb-dropdown .dropdown-button')?.textContent.trim() || "";
+            mainStatId = orbToId[orbMain] || 1;
+          } else {
+            const ropeMain = row.querySelector('.rope-dropdown .dropdown-button')?.textContent.trim() || "";
+            mainStatId = ropeToId[ropeMain] || 1;
+          }
+        }
+
+        // Get substats
+        const subButtons = Array.from(row.querySelectorAll('.sub-dropdown .dropdown-button'));
+        const subCounts = Array.from(row.querySelectorAll('.relic-num'));
+        const stepSelects = Array.from(row.querySelectorAll('.step-dropdown'));
+
+        const substats = [];
+        for (let i = 0; i < 4; i++) {
+          const subName = subButtons[i]?.textContent.trim() || "";
+          const subId = subToId[subName] || 0;
+          const numVal = parseInt(subCounts[i]?.value) || 0;
+          const cnt = numVal + 1; // Add 1 like in original
+          const stepValue = stepSelects[i]?.value || 'mid';
+          let mult = 1;
+          if (stepValue === 'low') mult = 0;
+          else if (stepValue === 'high') mult = 2;
+          
+          const stepResult = cnt * mult;
+          substats.push(`${subId}:${cnt}:${stepResult}`);
+        }
+
+        // Format: relicFullId,level,mainStatId,rarity,substats
+        const relicString = `${relicFullId},15,${mainStatId},4,${substats.join(',')}`;
+        relics.push(relicString);
+      });
+
+      // Build character object
+      const charObj = {
+        name: charName,
+        id: charId,
+        hp: 100,
+        sp: 50,
+        level: 80,
+        promotion: 6,
+        rank: charRank,
+        lightcone: {
+          id: lcId,
+          rank: lcRank,
+          level: 80,
+          promotion: 6
+        },
+        relics: relics,
+        use_technique: true
+      };
+
+      characters.push(charObj);
+    });
+
+    // Create JSON output
+    const jsonOutput = JSON.stringify(characters, null, 2);
+    
+    // Download JSON file
+    const blob = new Blob([jsonOutput], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    console.log('JSON exported successfully!');
+  }
+
+  function handler() {
       const charButtons = Array.from(document.querySelectorAll('.character-dropdown .dropdown-button'));
       const lcButtons = Array.from(document.querySelectorAll('.lightcone-dropdown .dropdown-button'));
       const relicSections = ['head','hand','body','boots','orb','rope'];
@@ -898,6 +1031,11 @@ document.getElementById("export-btn").addEventListener("click", handler)
 document.getElementById("import-btn").addEventListener("click", ()=>{
   document.getElementById('import-file').click()
 })
+
+// Add JSON export button functionality
+if (document.getElementById("export-json-btn")) {
+  document.getElementById("export-json-btn").addEventListener("click", exportToJSON);
+}
 
 document.getElementById('import-file').addEventListener('change', function(event){
   const fp = event.target.files[0]
